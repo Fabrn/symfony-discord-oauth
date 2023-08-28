@@ -1,0 +1,7 @@
+knpu_oauth2_client:
+    clients:
+        discord:
+            type: discord
+            client_id: '%env(DISCORD_APP_ID)%'
+            client_secret: '%env(DISCORD_SECRET_KEY)%'
+            redirect_route: auth_discord_login

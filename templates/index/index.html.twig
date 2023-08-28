@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello IndexController!{% endblock %}
+
+{% block body %}
+    <a href="{{ path('auth_discord_start') }}">
+        <button type="button">
+            Auth
+        </button>
+    </a>
+    <a href="{{ path('app_logout') }}">
+        Logout
+    </a>
+{% endblock %}
