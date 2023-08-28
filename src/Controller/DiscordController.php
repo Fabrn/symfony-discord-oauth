@@ -9,16 +9,17 @@ use Symfony\Component\HttpKernel\Attribute\AsController;
 use Symfony\Component\Routing\Annotation\Route;
 
 #[AsController]
+#[Route("/auth/discord", name: "auth_discord_")]
 final class DiscordController
 {
-    #[Route("/auth/discord/start", name: "auth_discord_start")]
+    #[Route("/login", name: "login")]
+    public function login(Request $request, ClientRegistry $clientRegistry)
+    {
+    }
+
+    #[Route("/start", name: "start")]
     public function start(ClientRegistry $clientRegistry): RedirectResponse
     {
         return $clientRegistry->getClient("discord")->redirect(["identify"]);
-    }
-
-    #[Route("/auth/discord/login", name: "auth_discord_login")]
-    public function login(Request $request, ClientRegistry $clientRegistry)
-    {
     }
 }

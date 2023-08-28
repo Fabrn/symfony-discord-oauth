@@ -3,12 +3,17 @@
 {% block title %}Hello IndexController!{% endblock %}
 
 {% block body %}
-    <a href="{{ path('auth_discord_start') }}">
-        <button type="button">
-            Auth
-        </button>
-    </a>
-    <a href="{{ path('app_logout') }}">
-        Logout
-    </a>
+    {% if not app.user %}
+        <a href="{{ path('auth_discord_start') }}">
+            <button type="button">
+                Auth
+            </button>
+        </a>
+    {% else %}
+        <a href="{{ path('app_logout') }}">
+            <button type="button">
+                Logout
+            </button>
+        </a>
+    {% endif %}
 {% endblock %}
